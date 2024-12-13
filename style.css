@@ -13,6 +13,12 @@ body {
     background-attachment: fixed;
     /* padding-top: 1.2rem; */
 }
+#body-header a i { 
+    display: block; /* Ensure all are displayed by default */ 
+} 
+#body-header > a:first-of-type i { 
+    display: none; /* Hide the first instance */
+}
 /* -----------------------------navigation bar----------------------- */
 .horizontal-list {
     list-style: none;
@@ -29,6 +35,12 @@ body {
     margin: 0px 10px;
     transition: color 0.5s;
 }
+#nav{
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .nav-menu li a:hover {
     color: aquamarine;
     /* text-decoration: underline; */
@@ -39,7 +51,7 @@ body {
 }
 /* ---------------------------- Header------------------------------------ */
 #name-social-container {
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 #my-name {
     font-size: 3rem;
@@ -411,10 +423,11 @@ textarea {
 
 }
 
+
 /*--------------------------------------breakpoints--------------------------------*/
 @media screen and (max-width: 768px){
     #name-social-container{
-        margin-top: 15vh;
+        margin-top: 10vh;
     }
     .timeline-divider{
         left: 5%;
@@ -450,6 +463,7 @@ textarea {
         margin-left: 15%;
     }
 }
+
 @media screen and (max-width: 517px){
     #name-social-container{
         margin-top: 1vh;
@@ -463,5 +477,32 @@ textarea {
     } 
     .skill-progress {
         margin: 10px auto;
+    }
+    #nav{
+        position: fixed;
+        flex-direction: column;
+        left: 75%;
+        top: 2.5%;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 2s ease-in-out;
+    }
+    #body-header > a:first-of-type i{
+        position: relative;
+        display: inline-flex;
+        left: 90%;
+        top: 5%;
+        font-size: 2rem;
+        color: white;
+    }
+    #nav:target{
+        height: auto;
+        max-height: 40%;
+        width: 30%;
+        top: 6%;
+        left:70%;
+        background-color: rgba(66, 66, 66, 0.473);
+        visibility: visible;
     }
 }
